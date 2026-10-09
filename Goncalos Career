@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basketball Career Statistics</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #fff;
+      color: #222;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+    }
+    header {
+      background: #263f5b;
+      color: white;
+      padding: 18px max(20px, calc((100% - 1100px)/2));
+    }
+    header h1 { margin: 0 0 6px; font-size: 27px; }
+    header p { margin: 0; color: #dce6f0; }
+    nav {
+      background: #e9eef3;
+      border-bottom: 1px solid #bcc7d2;
+      padding: 11px max(20px, calc((100% - 1100px)/2));
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+    a { color: #174f82; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    nav a { font-weight: bold; }
+    main { max-width: 1100px; margin: 22px auto; padding: 0 18px; }
+    .notice {
+      background: #fff7df;
+      border: 1px solid #e3ce8b;
+      padding: 11px;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+    .profile {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+      border-bottom: 2px solid #263f5b;
+      padding-bottom: 18px;
+    }
+    .photo {
+      width: 115px;
+      height: 135px;
+      background: #e8edf2;
+      border: 1px solid #c8d0d8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #536477;
+      padding: 10px;
+    }
+    h2 { font-size: 21px; margin: 0 0 9px; }
+    h3 {
+      font-size: 17px;
+      border-bottom: 1px solid #263f5b;
+      padding-bottom: 7px;
+      margin: 27px 0 12px;
+    }
+    .muted { color: #666; line-height: 1.7; }
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .stat {
+      border: 1px solid #ccd4dc;
+      padding: 12px;
+      background: #f7f9fb;
+    }
+    .stat strong { display: block; font-size: 22px; color: #263f5b; }
+    .stat span { color: #555; font-size: 12px; }
+    .table-wrap { overflow-x: auto; }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      white-space: nowrap;
+      font-size: 12px;
+    }
+    th {
+      background: #e8edf2;
+      border-top: 1px solid #aebac6;
+      border-bottom: 1px solid #aebac6;
+      padding: 9px 7px;
+      text-align: right;
+    }
+    td {
+      border-bottom: 1px solid #d9dfe5;
+      padding: 8px 7px;
+      text-align: right;
+    }
+    th:first-child, td:first-child { text-align: left; }
+    tbody tr:nth-child(even) { background: #f6f8fa; }
+    .section-note { color: #666; line-height: 1.6; }
+    .tag {
+      display: inline-block;
+      background: #e8edf2;
+      border: 1px solid #ccd4dc;
+      padding: 4px 7px;
+      margin: 3px 4px 3px 0;
+    }
+    footer {
+      margin-top: 40px;
+      padding: 20px;
+      background: #263f5b;
+      color: white;
+      text-align: center;
+      line-height: 1.7;
+    }
+    @media (max-width: 600px) {
+      header h1 { font-size: 22px; }
+      .summary { grid-template-columns: repeat(2, 1fr); }
+      .profile { align-items: flex-start; gap: 13px; }
+      .photo { width: 85px; height: 110px; flex-shrink: 0; }
+      nav { gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Basketball Career Statistics</h1>
+    <p>A personal basketball player profile</p>
+  </header>
+
+  <nav>
+    <a href="#overview">Overview</a>
+    <a href="#statistics">Statistics</a>
+    <a href="#teams">Teams</a>
+    <a href="#awards">Awards</a>
+    <a href="#gamelogs">Game Logs</a>
+    <a href="#highlights">Photos & Highlights</a>
+    <a href="#records">Career Records</a>
+  </nav>
+
+  <main>
+    <div class="notice">
+      <strong>Website under construction:</strong>
+      Any statistics or achievements added as examples must be verified before being treated as official career records.
+    </div>
+
+    <section id="overview">
+      <div class="profile">
+        <div class="photo">Player photo<br>placeholder</div>
+        <div>
+          <h2>Your Player Profile</h2>
+          <div class="muted">
+            Position: To be added<br>
+            Height: To be added<br>
+            Nationality: To be added<br>
+            Teams: To be added
+          </div>
+        </div>
+      </div>
+
+      <div class="summary">
+        <div class="stat"><strong>—</strong><span>Points per game</span></div>
+        <div class="stat"><strong>—</strong><span>Rebounds per game</span></div>
+        <div class="stat"><strong>—</strong><span>Assists per game</span></div>
+        <div class="stat"><strong>—</strong><span>Seasons played</span></div>
+      </div>
+    </section>
+
+    <section id="statistics">
+      <h3>Career Regular Season Statistics</h3>
+      <p class="section-note">Verified season-by-season statistics will appear here.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Season</th><th>Team</th><th>GP</th><th>PTS</th>
+              <th>TRB</th><th>AST</th><th>STL</th><th>BLK</th>
+              <th>FG%</th><th>3P%</th><th>FT%</th>
+            </tr>
+          </thead>
+          <tbody id="stats-body">
+            <tr><td colspan="11" style="text-align:center">No verified statistics added yet.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="teams">
+      <h3>Teams & Career History</h3>
+      <p class="section-note">Teams, seasons, leagues and career notes will be listed here.</p>
+      <div id="team-list">No teams added yet.</div>
+    </section>
+
+    <section id="awards">
+      <h3>Awards & Achievements</h3>
+      <p class="section-note">Championships, individual awards and other verified achievements will be listed here.</p>
+      <div id="award-list">No awards added yet.</div>
+    </section>
+
+    <section id="gamelogs">
+      <h3>Game Logs</h3>
+      <p class="section-note">Individual game performances can be recorded here, including points, rebounds, assists and minutes.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Date</th><th>Opponent</th><th>Result</th><th>PTS</th><th>TRB</th><th>AST</th></tr>
+          </thead>
+          <tbody>
+            <tr><td colspan="6" style="text-align:center">No game logs added yet.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="highlights">
+      <h3>Photos & Highlights</h3>
+      <p class="section-note">Space for player photos, highlight videos and memorable performances.</p>
+    </section>
+
+    <section id="records">
+      <h3>Career Records</h3>
+      <p class="section-note">Career highs and personal records will be added after they are verified.</p>
+      <div id="record-list">No career records added yet.</div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>Basketball Career Statistics</strong><br>
+    Personal player archive · Statistics to be verified
+  </footer>
+</body>
+</html>
