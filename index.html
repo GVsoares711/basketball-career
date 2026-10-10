@@ -1,36 +1,102 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Goncalo's Career Basketball Statistics</title>
 
 <style>
 *{box-sizing:border-box}
-body{margin:0;color:#222;background:#fff;font:13px Arial,Helvetica,sans-serif}
+
+body{
+  margin:0;
+  color:#222;
+  background:#fff;
+  font:12px Arial,Helvetica,sans-serif
+}
+
 a{color:#174f82;text-decoration:none}
 a:hover{text-decoration:underline}
-header{background:#263f5b;color:white;padding:18px max(16px,calc((100% - 1150px)/2))}
+
+header{
+  background:#263f5b;
+  color:white;
+  padding:18px max(16px,calc((100% - 1150px)/2))
+}
 header h1{font-size:27px;margin:0 0 7px}
 header p{margin:0;color:#dce6f0}
-nav{background:#e9eef3;border-bottom:1px solid #bbc6d1;padding:11px max(16px,calc((100% - 1150px)/2));display:flex;gap:17px;flex-wrap:wrap}
+
+nav{
+  background:#e9eef3;
+  border-bottom:1px solid #bbc6d1;
+  padding:11px max(16px,calc((100% - 1150px)/2));
+  display:flex;
+  gap:17px;
+  flex-wrap:wrap
+}
 nav a{font-weight:bold}
-main{max-width:1150px;margin:20px auto;padding:0 16px}
+
+main{
+  max-width:1150px;
+  margin:20px auto;
+  padding:0 12px;
+  min-width:0
+}
+
 h2{font-size:21px;margin:0 0 12px}
-h3{font-size:17px;margin:27px 0 10px;padding-bottom:6px;border-bottom:2px solid #263f5b}
+h3{
+  font-size:17px;
+  margin:27px 0 10px;
+  padding-bottom:6px;
+  border-bottom:2px solid #263f5b
+}
 h4{font-size:14px;margin:15px 0 8px}
 p{line-height:1.5}
 
-.profile{display:flex;gap:20px;align-items:center;padding:8px 0 18px;border-bottom:2px solid #263f5b}
-.photo{width:115px;height:135px;padding:0;overflow:hidden;flex-shrink:0;background:#e9edf1;border:1px solid #c5cdd5}
-.photo img{width:100%;height:100%;object-fit:contain;object-position:center;display:block}
+.profile{
+  display:flex;
+  gap:20px;
+  align-items:center;
+  padding:8px 0 18px;
+  border-bottom:2px solid #263f5b
+}
+.photo{
+  width:115px;
+  height:135px;
+  padding:0;
+  overflow:hidden;
+  flex-shrink:0;
+  background:#e9edf1;
+  border:1px solid #c5cdd5
+}
+.photo img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center;
+  display:block
+}
 .profile-info{flex:1;min-width:180px}
 .profile-info p{margin:5px 0;line-height:1.6}
 
-.team-jerseys{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
-.jersey-card{position:relative;text-align:center;min-width:48px;cursor:help}
-.jersey-card svg{display:block;width:43px;height:53px;margin:0 auto 4px;transition:transform .15s ease}
-.jersey-card:hover svg,.jersey-card:focus-within svg{transform:translateY(-3px)}
+.team-jerseys{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap
+}
+.jersey-card{
+  position:relative;
+  text-align:center;
+  min-width:48px;
+  cursor:help
+}
+.jersey-card svg{
+  display:block;
+  width:43px;
+  height:53px;
+  margin:0 auto 4px;
+  transition:transform .15s ease
+}
+.jersey-card:hover svg,
+.jersey-card:focus-within svg{
+  transform:translateY(-3px)
+}
 .jersey-label{font-size:11px;font-weight:bold;color:#444}
 
 .jersey-card::after{
@@ -51,39 +117,133 @@ p{line-height:1.5}
   pointer-events:none;
   z-index:5;
   transition:opacity .15s ease,transform .15s ease,visibility .15s ease;
-  box-shadow:0 2px 5px #0002;
+  box-shadow:0 2px 5px #0002
 }
-.jersey-card:hover::after,.jersey-card:focus-within::after{
+.jersey-card:hover::after,
+.jersey-card:focus-within::after{
   opacity:1;
   visibility:visible;
-  transform:translateX(-50%) translateY(0);
+  transform:translateX(-50%) translateY(0)
 }
-.jersey-card:focus-within{outline:2px solid #174f82;outline-offset:3px}
-.jersey-number{font-family:Arial,Helvetica,sans-serif;font-size:19px;font-weight:bold;fill:white;text-anchor:middle}
+.jersey-card:focus-within{
+  outline:2px solid #174f82;
+  outline-offset:3px
+}
+.jersey-number{
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:19px;
+  font-weight:bold;
+  fill:white;
+  text-anchor:middle
+}
 
 .muted{color:#666}
-.notice{background:#fff7df;border:1px solid #e4d49d;padding:10px;margin-bottom:17px;line-height:1.5}
-.summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin:16px 0}
-.stat{border:1px solid #c9d1da;background:#f6f8fa;padding:11px}
-.stat strong{display:block;font-size:21px;color:#263f5b;margin-bottom:4px}
+.notice{
+  background:#fff7df;
+  border:1px solid #e4d49d;
+  padding:10px;
+  margin-bottom:17px;
+  line-height:1.5
+}
+
+.summary{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:9px;
+  margin:16px 0
+}
+.stat{
+  border:1px solid #c9d1da;
+  background:#f6f8fa;
+  padding:11px
+}
+.stat strong{
+  display:block;
+  font-size:21px;
+  color:#263f5b;
+  margin-bottom:4px
+}
 .stat span{color:#555}
 
-.table-wrap{overflow-x:auto;margin:8px 0 13px}
-table{border-collapse:collapse;width:100%;font-size:12px;white-space:nowrap}
-th{background:#e8edf2;border-top:1px solid #aebac6;border-bottom:1px solid #aebac6;padding:0;text-align:right}
-th button{font:inherit;font-weight:bold;color:#222;background:transparent;border:0;padding:8px 7px;width:100%;cursor:pointer;white-space:nowrap}
+/* TABLES: fit the entire table to the page */
+.table-wrap{
+  width:100%;
+  max-width:100%;
+  overflow:visible;
+  margin:8px 0 13px
+}
+
+table{
+  border-collapse:collapse;
+  width:100%;
+  max-width:100%;
+  table-layout:fixed;
+  font-size:10px;
+  white-space:normal;
+  overflow-wrap:anywhere
+}
+
+th{
+  background:#e8edf2;
+  border-top:1px solid #aebac6;
+  border-bottom:1px solid #aebac6;
+  padding:0;
+  text-align:right;
+  overflow-wrap:anywhere
+}
+
+th button{
+  font:inherit;
+  font-weight:bold;
+  color:#222;
+  background:transparent;
+  border:0;
+  padding:5px 1px;
+  width:100%;
+  cursor:pointer;
+  white-space:normal;
+  overflow-wrap:anywhere;
+  line-height:1.15
+}
+
 th button:hover{background:#d5e0eb}
-th button:focus-visible{outline:2px solid #174f82;outline-offset:-2px}
+th button:focus-visible{
+  outline:2px solid #174f82;
+  outline-offset:-2px
+}
+
 th:first-child{text-align:left}
-td{border-bottom:1px solid #d8dfe6;padding:8px 7px;text-align:right}
+
+td{
+  border-bottom:1px solid #d8dfe6;
+  padding:5px 2px;
+  text-align:right;
+  overflow-wrap:anywhere;
+  word-break:normal;
+  line-height:1.2
+}
 td:first-child{text-align:left}
+
 tbody tr:nth-child(even){background:#f4f6f8}
 tbody tr:hover{background:#edf3f8}
-tfoot{font-weight:bold;background:#e8edf2}
-tfoot td{border-top:2px solid #263f5b;border-bottom:1px solid #aebac6}
-.note{color:#666;font-size:12px}
 
-.stat-tabs{display:flex;gap:4px;border-bottom:2px solid #263f5b;margin:12px 0 10px}
+tfoot{
+  font-weight:bold;
+  background:#e8edf2
+}
+tfoot td{
+  border-top:2px solid #263f5b;
+  border-bottom:1px solid #aebac6
+}
+
+.note{color:#666;font-size:11px}
+
+.stat-tabs{
+  display:flex;
+  gap:4px;
+  border-bottom:2px solid #263f5b;
+  margin:12px 0 10px
+}
 .stat-tab{
   appearance:none;
   border:1px solid #c5cdd5;
@@ -93,505 +253,113 @@ tfoot td{border-top:2px solid #263f5b;border-bottom:1px solid #aebac6}
   background:#e9eef3;
   color:#263f5b;
   font:bold 13px Arial,Helvetica,sans-serif;
-  cursor:pointer;
+  cursor:pointer
 }
 .stat-tab:hover{background:#dbe4ed}
 .stat-tab[aria-selected="true"]{
   background:#263f5b;
   color:white;
-  border-color:#263f5b;
+  border-color:#263f5b
 }
-.stat-tab:focus-visible{outline:2px solid #174f82;outline-offset:2px}
+.stat-tab:focus-visible{
+  outline:2px solid #174f82;
+  outline-offset:2px
+}
 .stat-panel[hidden]{display:none}
 
-.awards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:14px 0 20px}
-.award{border:1px solid #c8d1da;border-top:4px solid #263f5b;background:#f7f9fb;padding:12px;min-height:85px;text-align:center}
-.award strong{display:block;color:#263f5b;font-size:22px;margin-bottom:6px}
+.awards{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:10px;
+  margin:14px 0 20px
+}
+.award{
+  border:1px solid #c8d1da;
+  border-top:4px solid #263f5b;
+  background:#f7f9fb;
+  padding:12px;
+  min-height:85px;
+  text-align:center
+}
+.award strong{
+  display:block;
+  color:#263f5b;
+  font-size:22px;
+  margin-bottom:6px
+}
 .award span{line-height:1.5;color:#555}
-.team-list{border:1px solid #d4dbe2;padding:11px;margin:7px 0}
-.section-links{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
-.section-links a{border:1px solid #c7d0da;padding:7px 10px;background:#f6f8fa}
-footer{background:#263f5b;color:white;text-align:center;padding:20px;margin-top:35px;line-height:1.7}
 
-@media(max-width:650px){
-  .summary{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .awards{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .profile{align-items:flex-start;flex-wrap:wrap}
-  .photo{width:85px;height:110px}
-  .profile-info{flex:1}
-  .team-jerseys{width:100%;justify-content:flex-start;margin-top:8px}
+.team-list{
+  border:1px solid #d4dbe2;
+  padding:11px;
+  margin:7px 0
+}
+.section-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:12px 0
+}
+.section-links a{
+  border:1px solid #c7d0da;
+  padding:7px 10px;
+  background:#f6f8fa
+}
+
+footer{
+  background:#263f5b;
+  color:white;
+  text-align:center;
+  padding:20px;
+  margin-top:35px;
+  line-height:1.7
+}
+
+@media(max-width:800px){
+  main{padding:0 6px}
+
+  table{font-size:8px}
+
+  th button{padding:4px 0}
+  td{padding:4px 1px}
+
+  .summary{gap:5px}
+  .stat{padding:8px}
+  .stat strong{font-size:18px}
+
+  .awards{gap:6px}
+  .award{padding:8px}
+}
+
+@media(max-width:500px){
   header h1{font-size:22px}
   nav{gap:12px}
-}
-@media(max-width:400px){
-  .awards{grid-template-columns:1fr}
+
+  .profile{
+    align-items:flex-start;
+    flex-wrap:wrap
+  }
+
+  .photo{width:85px;height:110px}
+  .profile-info{flex:1;min-width:0}
+
+  .team-jerseys{
+    width:100%;
+    justify-content:flex-start;
+    margin-top:8px
+  }
+
+  .summary{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .awards{grid-template-columns:repeat(2,minmax(0,1fr))}
+
+  table{font-size:7px}
+  th button{font-size:7px}
+  td{padding:3px 0}
+
   .stat-tab{padding:9px 13px}
 }
+
+@media(max-width:350px){
+  .awards{grid-template-columns:1fr}
+}
 </style>
-</head>
-
-<body>
-
-<header>
-  <h1>Goncalo's Career</h1>
-  <p>Basketball player statistics and career history</p>
-</header>
-
-<nav>
-  <a href="#overview">Overview</a>
-  <a href="#statistics">Statistics</a>
-  <a href="#teams">Teams</a>
-  <a href="#awards">Awards</a>
-  <a href="#gamelogs">Game Logs</a>
-  <a href="#records">Career Records</a>
-  <a href="#highlights">Photos & Highlights</a>
-</nav>
-
-<main>
-  <div class="notice">
-    <strong>Personal statistics archive.</strong>
-    Replace the blank fields with your verified information.
-    No example statistics are being presented as actual results.
-  </div>
-
-  <section id="overview">
-    <div class="profile">
-      <div class="photo">
-        <img src="Screenshot_2026-10-09_at_08.09.53-removebg-preview.png" alt="Goncalo Soares">
-      </div>
-
-      <div class="profile-info">
-        <h2>Goncalo Soares</h2>
-        <p>Position: Small Forward</p>
-        <p>Height: 6-1 (185cm) | Weight: 160lb (73kg) | Born in: Lisbon, Portugal</p>
-        <p>Birthday: April 18, 2008</p>
-        <p>Career: 6 years</p>
-      </div>
-
-      <div class="team-jerseys">
-        <div class="jersey-card" data-years="OBC · 2021–2024" tabindex="0">
-          <svg viewBox="0 0 70 70" role="img" aria-label="OBC red jersey number 7, 2021 to 2024">
-            <title>OBC · 2021–2024</title>
-            <path d="M20 5 L28 5 Q35 19 42 5 L50 5 L65 17 L56 29 L49 23 L49 62 L21 62 L21 23 L14 29 L5 17 Z" fill="#d62828" stroke="#8f1515" stroke-width="2"/>
-            <path d="M28 5 Q35 19 42 5" fill="none" stroke="white" stroke-width="2"/>
-            <path d="M22 25 L22 59 M48 25 L48 59" stroke="#fff" stroke-width="1.5" opacity=".8"/>
-            <text x="35" y="43" class="jersey-number">7</text>
-          </svg>
-          <div class="jersey-label">OBC</div>
-        </div>
-
-        <div class="jersey-card" data-years="DOL · 2024–2025" tabindex="0">
-          <svg viewBox="0 0 70 70" role="img" aria-label="DOL blue jersey number 7, 2024 to 2025">
-            <title>DOL · 2024–2025</title>
-            <path d="M20 5 L28 5 Q35 19 42 5 L50 5 L65 17 L56 29 L49 23 L49 62 L21 62 L21 23 L14 29 L5 17 Z" fill="#2674c8" stroke="#174778" stroke-width="2"/>
-            <path d="M28 5 Q35 19 42 5" fill="none" stroke="white" stroke-width="2"/>
-            <path d="M22 25 L22 59 M48 25 L48 59" stroke="#fff" stroke-width="1.5" opacity=".8"/>
-            <text x="35" y="43" class="jersey-number">7</text>
-          </svg>
-          <div class="jersey-label">DOL</div>
-        </div>
-
-        <div class="jersey-card" data-years="PAN · 2025–2026" tabindex="0">
-          <svg viewBox="0 0 70 70" role="img" aria-label="PAN dark green jersey number 16, 2025 to 2026">
-            <title>PAN · 2025–2026</title>
-            <path d="M20 5 L28 5 Q35 19 42 5 L50 5 L65 17 L56 29 L49 23 L49 62 L21 62 L21 23 L14 29 L5 17 Z" fill="#14532d" stroke="#0b351c" stroke-width="2"/>
-            <path d="M28 5 Q35 19 42 5" fill="none" stroke="#f2f2f2" stroke-width="2"/>
-            <path d="M22 25 L22 59 M48 25 L48 59" stroke="#fff" stroke-width="1.5" opacity=".8"/>
-            <text x="35" y="43" class="jersey-number" style="font-size:17px">16</text>
-          </svg>
-          <div class="jersey-label">PAN</div>
-        </div>
-
-        <div class="jersey-card" data-years="LPH · 2026–2027" tabindex="0">
-          <svg viewBox="0 0 70 70" role="img" aria-label="LPH yellow jersey number 11, 2026 to 2027">
-            <title>LPH · 2026–2027</title>
-            <path d="M20 5 L28 5 Q35 19 42 5 L50 5 L65 17 L56 29 L49 23 L49 62 L21 62 L21 23 L14 29 L5 17 Z" fill="#d6a62c" stroke="#9b741b" stroke-width="2"/>
-            <path d="M28 5 Q35 19 42 5" fill="none" stroke="#263f5b" stroke-width="2"/>
-            <path d="M22 25 L22 59 M48 25 L48 59" stroke="#263f5b" stroke-width="1.5" opacity=".8"/>
-            <text x="35" y="43" class="jersey-number" style="fill:#263f5b;font-size:17px">11</text>
-          </svg>
-          <div class="jersey-label">LPH</div>
-        </div>
-      </div>
-    </div>
-
-    <section id="awards">
-      <h3>Awards & Achievements</h3>
-      <div class="awards">
-        <div class="award"><strong>2x Champion</strong><span>2023-24, 2024-25</span></div>
-        <div class="award"><strong>Finals MVP</strong><span>2024-25</span></div>
-        <div class="award"><strong>2x All-Star</strong><span>2023-24, 2024-25</span></div>
-      </div>
-    </section>
-
-    <h3>Career Averages</h3>
-    <div class="summary">
-      <div class="stat"><strong>13.8</strong><span>Points per game</span></div>
-      <div class="stat"><strong>6.2</strong><span>Rebounds per game</span></div>
-      <div class="stat"><strong>3.8</strong><span>Assists per game</span></div>
-      <div class="stat"><strong>112</strong><span>Games played</span></div>
-    </div>
-  </section>
-
-  <section id="statistics">
-    <h3>Season Statistics</h3>
-    <p class="note">
-      Choose Regular Season or Playoffs. Click a column heading once to sort
-      ascending, twice to sort descending, and a third time to restore the
-      original order. The career row stays at the bottom.
-    </p>
-
-    <div class="stat-tabs" role="tablist" aria-label="Statistics type">
-      <button class="stat-tab" id="regular-tab" type="button" role="tab" aria-selected="true" aria-controls="regular-panel">Regular Season</button>
-      <button class="stat-tab" id="playoffs-tab" type="button" role="tab" aria-selected="false" aria-controls="playoffs-panel" tabindex="-1">Playoffs</button>
-    </div>
-
-    <div class="stat-panel" id="regular-panel" role="tabpanel" aria-labelledby="regular-tab">
-      <div class="table-wrap">
-        <table id="season-stats">
-          <thead>
-            <tr>
-              <th><button type="button">Season</button></th>
-              <th><button type="button">Team</button></th>
-              <th><button type="button">GP</button></th>
-              <th><button type="button">GS</button></th>
-              <th><button type="button">MP</button></th>
-              <th><button type="button">FG</button></th>
-              <th><button type="button">FGA</button></th>
-              <th><button type="button">FG%</button></th>
-              <th><button type="button">2P</button></th>
-              <th><button type="button">2PA</button></th>
-              <th><button type="button">2P%</button></th>
-              <th><button type="button">3P</button></th>
-              <th><button type="button">3PA</button></th>
-              <th><button type="button">3P%</button></th>
-              <th><button type="button">FT</button></th>
-              <th><button type="button">FTA</button></th>
-              <th><button type="button">FT%</button></th>
-              <th><button type="button">eFG%</button></th>
-              <th><button type="button">TRB</button></th>
-              <th><button type="button">AST</button></th>
-              <th><button type="button">STL</button></th>
-              <th><button type="button">BLK</button></th>
-              <th><button type="button">TOV</button></th>
-              <th><button type="button">PF</button></th>
-              <th><button type="button">PTS</button></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>2021-22</td><td>OBC</td><td>22</td><td>21</td><td>27.1</td><td>5.4</td><td>11.3</td><td>47.6%</td><td>5.2</td><td>10.8</td><td>48.3%</td><td>0.1</td><td>0.5</td><td>30.0%</td><td>1.6</td><td>2.8</td><td>56.5%</td><td>48.2%</td><td>7.5</td><td>2.6</td><td>0.7</td><td>1.1</td><td>2.2</td><td>2.6</td><td>12.9</td></tr>
-            <tr><td>2022-23</td><td>OBC</td><td>25</td><td>23</td><td>31.3</td><td>4.5</td><td>9.2</td><td>48.5%</td><td>4.0</td><td>7.8</td><td>51.6%</td><td>0.5</td><td>1.5</td><td>32.4%</td><td>2.4</td><td>3.3</td><td>72.0%</td><td>51.1%</td><td>6.2</td><td>4.0</td><td>1.4</td><td>1.2</td><td>2.4</td><td>1.9</td><td>11.6</td></tr>
-            <tr><td>2023-24</td><td>OBC</td><td>26</td><td>26</td><td>33.2</td><td>4.8</td><td>10.2</td><td>47.0%</td><td>4.1</td><td>8.2</td><td>50.1%</td><td>0.7</td><td>2.0</td><td>34.5%</td><td>2.8</td><td>3.7</td><td>75.7%</td><td>50.4%</td><td>5.7</td><td>4.4</td><td>1.7</td><td>0.9</td><td>2.6</td><td>2.2</td><td>13.1</td></tr>
-            <tr><td>2024-25</td><td>DOL</td><td>23</td><td>23</td><td>35.6</td><td>6.0</td><td>12.5</td><td>48.1%</td><td>5.0</td><td>9.5</td><td>52.1%</td><td>1.0</td><td>3.0</td><td>35.3%</td><td>3.4</td><td>4.4</td><td>78.1%</td><td>52.3%</td><td>6.6</td><td>3.9</td><td>2.1</td><td>1.2</td><td>2.5</td><td>2.4</td><td>16.5</td></tr>
-            <tr><td>2025-26</td><td>PAN</td><td>12</td><td>10</td><td>32.5</td><td>5.6</td><td>11.7</td><td>47.6%</td><td>4.4</td><td>8.4</td><td>52.5%</td><td>1.1</td><td>3.3</td><td>34.8%</td><td>2.4</td><td>3.1</td><td>77.3%</td><td>52.4%</td><td>5.1</td><td>4.2</td><td>1.6</td><td>1.2</td><td>2.1</td><td>1.8</td><td>14.7</td></tr>
-            <tr><td>2026-27</td><td>LPH</td><td>2</td><td>2</td><td>34.4</td><td>5.5</td><td>10.5</td><td>52.4%</td><td>3.5</td><td>6.5</td><td>53.9%</td><td>2.0</td><td>4.0</td><td>50.0%</td><td>1.5</td><td>2.0</td><td>75.0%</td><td>61.9%</td><td>4.5</td><td>2.0</td><td>2.0</td><td>1.0</td><td>2.5</td><td>0.0</td><td>14.5</td></tr>
-          </tbody>
-          <tfoot>
-            <tr><td>Career Average</td><td>6 yrs</td><td>112</td><td>107</td><td>32.1</td><td>5.2</td><td>10.9</td><td>47.8%</td><td>4.5</td><td>8.9</td><td>50.8%</td><td>0.7</td><td>2.0</td><td>34.8%</td><td>2.6</td><td>3.6</td><td>72.9%</td><td>51.0%</td><td>6.2</td><td>3.8</td><td>1.5</td><td>1.1</td><td>2.4</td><td>2.1</td><td>13.8</td></tr>
-          </tfoot>
-        </table>
-      </div>
-      <p class="note">FG = field goals made; 2P = two-pointers made; 3P = three-pointers made; FT = free throws made; TRB = total rebounds. Enter averages and percentages manually.</p>
-    </div>
-
-    <div class="stat-panel" id="playoffs-panel" role="tabpanel" aria-labelledby="playoffs-tab" hidden>
-      <div class="table-wrap">
-        <table id="playoff-stats">
-          <thead>
-            <tr>
-              <th><button type="button">Season</button></th><th><button type="button">Team</button></th>
-              <th><button type="button">GP</button></th><th><button type="button">GS</button></th>
-              <th><button type="button">MP</button></th><th><button type="button">FG</button></th>
-              <th><button type="button">FGA</button></th><th><button type="button">FG%</button></th>
-              <th><button type="button">2P</button></th><th><button type="button">2PA</button></th>
-              <th><button type="button">2P%</button></th><th><button type="button">3P</button></th>
-              <th><button type="button">3PA</button></th><th><button type="button">3P%</button></th>
-              <th><button type="button">FT</button></th><th><button type="button">FTA</button></th>
-              <th><button type="button">FT%</button></th><th><button type="button">eFG%</button></th>
-              <th><button type="button">TRB</button></th><th><button type="button">AST</button></th>
-              <th><button type="button">STL</button></th><th><button type="button">BLK</button></th>
-              <th><button type="button">TOV</button></th><th><button type="button">PF</button></th>
-              <th><button type="button">PTS</button></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>2021-22</td><td>OBC</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-            <tr><td>2022-23</td><td>OBC</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-            <tr><td>2023-24</td><td>OBC</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-            <tr><td>2024-25</td><td>DOL</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-            <tr><td>2025-26</td><td>PAN</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-            <tr><td>2026-27</td><td>LPH</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          </tbody>
-          <tfoot>
-            <tr><td>Playoff Average</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          </tfoot>
-        </table>
-      </div>
-      <p class="note">Enter your playoff per-game averages and percentages in the blank cells. The seasons and teams are already listed for convenience.</p>
-    </div>
-
-    <h4>Regular Season Totals</h4>
-    <div class="stat-tabs" role="tablist" aria-label="Totals statistics type">
-      <button class="stat-tab" id="regular-totals-tab" type="button" role="tab" aria-selected="true" aria-controls="regular-totals-panel">Regular Season</button>
-      <button class="stat-tab" id="playoffs-totals-tab" type="button" role="tab" aria-selected="false" aria-controls="playoffs-totals-panel" tabindex="-1">Playoffs</button>
-    </div>
-
-    <div class="stat-panel" id="regular-totals-panel" role="tabpanel" aria-labelledby="regular-totals-tab">
-      <div class="table-wrap">
-        <table id="regular-totals">
-          <thead>
-            <tr>
-              <th><button type="button">Season</button></th><th><button type="button">Team</button></th>
-              <th><button type="button">GP</button></th><th><button type="button">GS</button></th>
-              <th><button type="button">MP</button></th><th><button type="button">FG</button></th>
-              <th><button type="button">FGA</button></th><th><button type="button">FG%</button></th>
-              <th><button type="button">2P</button></th><th><button type="button">2PA</button></th>
-              <th><button type="button">2P%</button></th><th><button type="button">3P</button></th>
-              <th><button type="button">3PA</button></th><th><button type="button">3P%</button></th>
-              <th><button type="button">FT</button></th><th><button type="button">FTA</button></th>
-              <th><button type="button">FT%</button></th><th><button type="button">eFG%</button></th>
-              <th><button type="button">TRB</button></th><th><button type="button">AST</button></th>
-              <th><button type="button">STL</button></th><th><button type="button">BLK</button></th>
-              <th><button type="button">TOV</button></th><th><button type="button">PF</button></th>
-              <th><button type="button">PTS</button></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>2021-22</td><td>OBC</td><td>22</td><td>21</td><td>596</td><td>118</td><td>248</td><td>47.6%</td><td>115</td><td>238</td><td>48.3%</td><td>3</td><td>10</td><td>30.0%</td><td>35</td><td>62</td><td>56.5%</td><td>48.2%</td><td>166</td><td>57</td><td>16</td><td>24</td><td>48</td><td>57</td><td>283</td></tr>
-            <tr><td>2022-23</td><td>OBC</td><td>25</td><td>23</td><td>720</td><td>112</td><td>231</td><td>48.5%</td><td>100</td><td>194</td><td>51.6%</td><td>12</td><td>37</td><td>32.4%</td><td>59</td><td>82</td><td>72.0%</td><td>51.1%</td><td>155</td><td>101</td><td>36</td><td>30</td><td>60</td><td>47</td><td>291</td></tr>
-            <tr><td>2023-24</td><td>OBC</td><td>26</td><td>26</td><td>863</td><td>125</td><td>265</td><td>47.0%</td><td>107</td><td>213</td><td>50.1%</td><td>18</td><td>52</td><td>34.5%</td><td>73</td><td>96</td><td>75.7%</td><td>50.4%</td><td>148</td><td>114</td><td>44</td><td>23</td><td>68</td><td>57</td><td>341</td></tr>
-            <tr><td>2024-25</td><td>DOL</td><td>23</td><td>23</td><td>819</td><td>138</td><td>287</td><td>48.1%</td><td>114</td><td>219</td><td>52.1%</td><td>24</td><td>68</td><td>35.3%</td><td>89</td><td>114</td><td>78.1%</td><td>52.3%</td><td>151</td><td>90</td><td>48</td><td>27</td><td>57</td><td>55</td><td>396</td></tr>
-            <tr><td>2025-26</td><td>PAN</td><td>12</td><td>10</td><td>390</td><td>67</td><td>143</td><td>47.6%</td><td>54</td><td>103</td><td>52.5%</td><td>13</td><td>40</td><td>34.8%</td><td>29</td><td>38</td><td>77.3%</td><td>52.4%</td><td>62</td><td>51</td><td>20</td><td>10</td><td>25</td><td>21</td><td>177</td></tr>
-            <tr><td>2026-27</td><td>LPH</td><td>2</td><td>2</td><td>69</td><td>11</td><td>21</td><td>52.4%</td><td>7</td><td>13</td><td>53.9%</td><td>4</td><td>8</td><td>50.0%</td><td>3</td><td>4</td><td>75.0%</td><td>61.9%</td><td>9</td><td>4</td><td>4</td><td>2</td><td>5</td><td>0</td><td>29</td></tr>
-          </tbody>
-          <tfoot>
-            <tr><td>Career Average</td><td>6 yrs</td><td>112</td><td>107</td><td>3457</td><td>1065</td><td>1195</td><td>47.8%</td><td>497</td><td>980</td><td>50.8%</td><td>74</td><td>215</td><td>34.8%</td><td>288</td><td>392</td><td>72.9%</td><td>51.0%</td><td>691</td><td>417</td><td>168</td><td>116</td><td>263</td><td>237</td><td>1517</td></tr>
-          </tfoot>
-        </table>
-      </div>
-      <p class="note">Totals are entered manually. Click a column heading to sort ascending, descending, or restore the original order. Fill in the career row yourself.</p>
-    </div>
-
-    <div class="stat-panel" id="playoffs-totals-panel" role="tabpanel" aria-labelledby="playoffs-totals-tab" hidden>
-      <div class="table-wrap">
-        <table id="playoff-totals">
-          <thead>
-            <tr>
-              <th><button type="button">Season</button></th><th><button type="button">Team</button></th>
-              <th><button type="button">GP</button></th><th><button type="button">GS</button></th>
-              <th><button type="button">MP</button></th><th><button type="button">FG</button></th>
-              <th><button type="button">FGA</button></th><th><button type="button">FG%</button></th>
-              <th><button type="button">2P</button></th><th><button type="button">2PA</button></th>
-              <th><button type="button">2P%</button></th><th><button type="button">3P</button></th>
-              <th><button type="button">3PA</button></th><th><button type="button">3P%</button></th>
-              <th><button type="button">FT</button></th><th><button type="button">FTA</button></th>
-              <th><button type="button">FT%</button></th><th><button type="button">eFG%</button></th>
-              <th><button type="button">TRB</button></th><th><button type="button">AST</button></th>
-              <th><button type="button">STL</button></th><th><button type="button">BLK</button></th>
-              <th><button type="button">TOV</button></th><th><button type="button">PF</button></th>
-              <th><button type="button">PTS</button></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>2021-22</td><td>OBC</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-            <tr><td>2022-23</td><td>OBC</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-            <tr><td>2023-24</td><td>OBC</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-            <tr><td>2024-25</td><td>DOL</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-            <tr><td>2025-26</td><td>PAN</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-            <tr><td>2026-27</td><td>LPH</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          </tbody>
-          <tfoot>
-            <tr><td>Playoff Totals</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          </tfoot>
-        </table>
-      </div>
-      <p class="note">Enter your playoff totals in the blank cells. Click a column heading to sort ascending, descending, or restore the original order.</p>
-    </div>
-  </section>
-
-  <section id="teams">
-    <h3>Teams & Career History</h3>
-    <div class="team-list"><strong>OBC</strong> · Season(s): 2021-22, 2022-23, 2023-24 · League: —</div>
-    <div class="team-list"><strong>DOL</strong> · Season(s): 2024-25 · League: —</div>
-    <div class="team-list"><strong>PAN</strong> · Season(s): 2025-26 · League: —</div>
-    <div class="team-list"><strong>LPH</strong> · Season(s): 2026-27 · League: —</div>
-  </section>
-
-  <section id="gamelogs">
-    <h3>Game Logs</h3>
-    <p>Choose a season to view individual game performances.</p>
-    <div class="section-links">
-      <a href="gamelogs.html#season-1">Season 1 Game Logs</a>
-      <a href="gamelogs.html#season-2">Season 2 Game Logs</a>
-    </div>
-  </section>
-
-  <section id="records">
-    <h3>Career Records</h3>
-    <div class="team-list">Points in a game: 31 (03-01-25) DOL</div>
-    <div class="team-list">Rebounds in a game: 16 (11-16-24) DOL</div>
-    <div class="team-list">Assists in a game: 10 (01-20-24) OBC</div>
-    <div class="team-list">Steals in a game: 7 (12-07-24) DOL</div>
-    <div class="team-list">Blocks in a game: 4 (03-12-22) OBC</div>
-    <div class="team-list">Three-pointers made in a game: 3 OBC-DOL-LPH</div>
-  </section>
-
-  <section id="highlights">
-    <h3>Photos & Highlights</h3>
-    <p>Add links to your game highlights, photos and videos here.</p>
-  </section>
-</main>
-
-<footer>
-  <strong>Goncalo's Career</strong><br>
-  Personal basketball statistics archive
-</footer>
-
-<script>
-(function () {
-  const regularTab = document.getElementById("regular-tab");
-  const playoffsTab = document.getElementById("playoffs-tab");
-  const regularPanel = document.getElementById("regular-panel");
-  const playoffsPanel = document.getElementById("playoffs-panel");
-
-  const regularTotalsTab = document.getElementById("regular-totals-tab");
-  const playoffsTotalsTab = document.getElementById("playoffs-totals-tab");
-  const regularTotalsPanel = document.getElementById("regular-totals-panel");
-  const playoffsTotalsPanel = document.getElementById("playoffs-totals-panel");
-
-  function showPanel(which) {
-    const showRegular = which === "regular";
-    regularPanel.hidden = !showRegular;
-    playoffsPanel.hidden = showRegular;
-    regularTab.setAttribute("aria-selected", String(showRegular));
-    playoffsTab.setAttribute("aria-selected", String(!showRegular));
-    regularTab.tabIndex = showRegular ? 0 : -1;
-    playoffsTab.tabIndex = showRegular ? -1 : 0;
-  }
-
-  regularTab.addEventListener("click", function () {
-    showPanel("regular");
-  });
-
-  playoffsTab.addEventListener("click", function () {
-    showPanel("playoffs");
-  });
-
-  [regularTab, playoffsTab].forEach(function (tab) {
-    tab.addEventListener("keydown", function (event) {
-      if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
-        event.preventDefault();
-        const nextTab = tab === regularTab ? playoffsTab : regularTab;
-        nextTab.focus();
-        nextTab.click();
-      }
-    });
-  });
-
-  function showTotalsPanel(which) {
-    const showRegular = which === "regular";
-    regularTotalsPanel.hidden = !showRegular;
-    playoffsTotalsPanel.hidden = showRegular;
-    regularTotalsTab.setAttribute("aria-selected", String(showRegular));
-    playoffsTotalsTab.setAttribute("aria-selected", String(!showRegular));
-    regularTotalsTab.tabIndex = showRegular ? 0 : -1;
-    playoffsTotalsTab.tabIndex = showRegular ? -1 : 0;
-  }
-
-  regularTotalsTab.addEventListener("click", function () {
-    showTotalsPanel("regular");
-  });
-
-  playoffsTotalsTab.addEventListener("click", function () {
-    showTotalsPanel("playoffs");
-  });
-
-  [regularTotalsTab, playoffsTotalsTab].forEach(function (tab) {
-    tab.addEventListener("keydown", function (event) {
-      if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
-        event.preventDefault();
-        const nextTab = tab === regularTotalsTab ? playoffsTotalsTab : regularTotalsTab;
-        nextTab.focus();
-        nextTab.click();
-      }
-    });
-  });
-
-  document.querySelectorAll(
-    "#season-stats, #playoff-stats, #regular-totals, #playoff-totals"
-  ).forEach(function (table) {
-    const headers = table.querySelectorAll("thead th");
-    const body = table.querySelector("tbody");
-    const originalRows = Array.from(body.querySelectorAll("tr"));
-    const clickCounts = {};
-
-    headers.forEach(function (header, columnIndex) {
-      const button = header.querySelector("button");
-      if (!button) return;
-
-      const originalLabel = button.textContent.trim();
-      clickCounts[columnIndex] = 0;
-
-      button.addEventListener("click", function () {
-        clickCounts[columnIndex] = (clickCounts[columnIndex] + 1) % 3;
-        const clickCount = clickCounts[columnIndex];
-
-        headers.forEach(function (otherHeader, otherIndex) {
-          const otherButton = otherHeader.querySelector("button");
-          if (otherButton) {
-            otherButton.textContent = otherButton.textContent.replace(/ [▲▼]$/, "");
-          }
-          if (otherIndex !== columnIndex) clickCounts[otherIndex] = 0;
-        });
-
-        if (clickCount === 0) {
-          originalRows.forEach(function (row) {
-            body.appendChild(row);
-          });
-          button.textContent = originalLabel;
-          return;
-        }
-
-        const direction = clickCount === 1 ? "asc" : "desc";
-        const rows = Array.from(body.querySelectorAll("tr"));
-
-        rows.sort(function (rowA, rowB) {
-          const textA = rowA.cells[columnIndex].textContent.trim();
-          const textB = rowB.cells[columnIndex].textContent.trim();
-          let comparison;
-          const isNumeric = columnIndex >= 2;
-          const numberA = parseFloat(textA.replace("%", ""));
-          const numberB = parseFloat(textB.replace("%", ""));
-
-          if (isNumeric) {
-            const validA = textA !== "" && textA !== "—" && !Number.isNaN(numberA);
-            const validB = textB !== "" && textB !== "—" && !Number.isNaN(numberB);
-
-            if (!validA && !validB) return 0;
-            if (!validA) return 1;
-            if (!validB) return -1;
-
-            comparison = numberA - numberB;
-          } else {
-            comparison = textA.localeCompare(textB, undefined, {
-              numeric: true,
-              sensitivity: "base"
-            });
-          }
-
-          return direction === "asc" ? comparison : -comparison;
-        });
-
-        rows.forEach(function (row) {
-          body.appendChild(row);
-        });
-
-        button.textContent = originalLabel + (direction === "asc" ? " ▲" : " ▼");
-      });
-    });
-  });
-})();
-</script>
-
-</body>
-</html>
