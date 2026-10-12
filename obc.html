@@ -6,17 +6,13 @@
   original order.
 </p>
 
-<div class="stat-tabs" role="tablist" aria-label="Statistics type">
-  <button class="stat-tab" id="regular-tab" type="button" role="tab" aria-selected="true" aria-controls="regular-panel">Regular Season</button>
-  <button class="stat-tab" id="playoffs-tab" type="button" role="tab" aria-selected="false" aria-controls="playoffs-panel" tabindex="-1">Playoffs</button>
-</div>
-
 <div class="stat-panel" id="regular-panel" role="tabpanel" aria-labelledby="regular-tab">
   <div class="table-wrap">
     <table id="season-stats">
       <thead>
         <tr>
-          <th><button type="button">Player</button></th>
+          <th><button type="button">Season</button></th>
+          <th><button type="button">Team</button></th>
           <th><button type="button">GP</button></th>
           <th><button type="button">GS</button></th>
           <th><button type="button">MP</button></th>
@@ -43,24 +39,18 @@
         </tr>
       </thead>
       <tbody>
-        <tr><td>G.Soares</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-        <tr><td>A.Silva</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-        <tr><td>M.Carvalho</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-        <tr><td>A.Vaz</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-        <tr><td>M.Saad</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-        <tr><td>R.Tavares</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-        <tr><td>G.Pereira</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-        <tr><td>P.Inácio</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-        <tr><td>G.Gomes</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-        <tr><td>S.Faria</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-        <tr><td>M.Dias</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-        <tr><td>M.Heitor</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-        <tr><td>S.Nunes</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-        <tr><td>A.Garcia</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+        <tr><td>2021-22</td><td><a href="obc.html">OBC</a></td><td>22</td><td>21</td><td>27.1</td><td>5.4</td><td>11.3</td><td>47.6%</td><td>5.2</td><td>10.8</td><td>48.3%</td><td>0.1</td><td>0.5</td><td>30.0%</td><td>1.6</td><td>2.8</td><td>56.5%</td><td>48.2%</td><td>7.5</td><td>2.6</td><td>0.7</td><td>1.1</td><td>2.2</td><td>2.6</td><td>12.9</td></tr>
+        <tr><td>2022-23</td><td>OBC</td><td>25</td><td>23</td><td>31.3</td><td>4.5</td><td>9.2</td><td>48.5%</td><td>4.0</td><td>7.8</td><td>51.6%</td><td>0.5</td><td>1.5</td><td>32.4%</td><td>2.4</td><td>3.3</td><td>72.0%</td><td>51.1%</td><td>6.2</td><td>4.0</td><td>1.4</td><td>1.2</td><td>2.4</td><td>1.9</td><td>11.6</td></tr>
+        <tr><td>2023-24 🏆</td><td>OBC</td><td><strong>26</strong></td><td><strong>26</strong></td><td>33.2</td><td>4.8</td><td>10.2</td><td>47.0%</td><td>4.1</td><td>8.2</td><td>50.1%</td><td>0.7</td><td>2.0</td><td>34.5%</td><td>2.8</td><td>3.7</td><td>75.7%</td><td>50.4%</td><td>5.7</td><td>4.4</td><td>1.7</td><td>0.9</td><td>2.6</td><td>2.2</td><td>13.1</td></tr>
+        <tr><td>2024-25 🏆</td><td>DOL</td><td>23</td><td>23</td><td>35.6</td><td>6.0</td><td>12.5</td><td>48.1%</td><td>5.0</td><td>9.5</td><td>52.1%</td><td>1.0</td><td>3.0</td><td>35.3%</td><td>3.4</td><td>4.4</td><td>78.1%</td><td>52.3%</td><td>6.6</td><td>3.9</td><td>2.1</td><td>1.2</td><td>2.5</td><td>2.4</td><td>16.5</td></tr>
+        <tr><td>2025-26</td><td>PAN</td><td>12</td><td>10</td><td>32.5</td><td>5.6</td><td>11.7</td><td>47.6%</td><td>4.4</td><td>8.4</td><td>52.5%</td><td>1.1</td><td>3.3</td><td>34.8%</td><td>2.4</td><td>3.1</td><td>77.3%</td><td>52.4%</td><td>5.1</td><td>4.2</td><td>1.6</td><td>1.2</td><td>2.1</td><td>1.8</td><td>14.7</td></tr>
+        <tr><td>2026-27</td><td>LPH</td><td>2</td><td>2</td><td>34.4</td><td>5.5</td><td>10.5</td><td>52.4%</td><td>3.5</td><td>6.5</td><td>53.9%</td><td>2.0</td><td>4.0</td><td>50.0%</td><td>1.5</td><td>2.0</td><td>75.0%</td><td>61.9%</td><td>4.5</td><td>2.0</td><td>2.0</td><td>1.0</td><td>2.5</td><td>0.0</td><td>14.5</td></tr>
       </tbody>
+      <tfoot>
+        <tr><td>Career Average</td><td>6 yrs</td><td>112</td><td>107</td><td>32.1</td><td>5.2</td><td>10.9</td><td>47.8%</td><td>4.5</td><td>8.9</td><td>50.8%</td><td>0.7</td><td>2.0</td><td>34.8%</td><td>2.6</td><td>3.6</td><td>72.9%</td><td>51.0%</td><td>6.2</td><td>3.8</td><td>1.5</td><td>1.1</td><td>2.4</td><td>2.1</td><td>13.8</td></tr>
     </table>
   </div>
-  <p class="note">FG = field goals made; 2P = two-pointers made; 3P = three-pointers made; FT = free throws made; TRB = total rebounds.</p>
+  <p class="note">FG = field goals made; 2P = two-pointers made; 3P = three-pointers made; FT = free throws made; TRB = total rebounds. Enter averages and percentages manually.</p>
 </div>
 
 <div class="stat-panel" id="playoffs-panel" role="tabpanel" aria-labelledby="playoffs-tab" hidden>
@@ -68,51 +58,34 @@
     <table id="playoff-stats">
       <thead>
         <tr>
-          <th><button type="button">Player</button></th>
-          <th><button type="button">GP</button></th>
-          <th><button type="button">GS</button></th>
-          <th><button type="button">MP</button></th>
-          <th><button type="button">FG</button></th>
-          <th><button type="button">FGA</button></th>
-          <th><button type="button">FG%</button></th>
-          <th><button type="button">2P</button></th>
-          <th><button type="button">2PA</button></th>
-          <th><button type="button">2P%</button></th>
-          <th><button type="button">3P</button></th>
-          <th><button type="button">3PA</button></th>
-          <th><button type="button">3P%</button></th>
-          <th><button type="button">FT</button></th>
-          <th><button type="button">FTA</button></th>
-          <th><button type="button">FT%</button></th>
-          <th><button type="button">eFG%</button></th>
-          <th><button type="button">TRB</button></th>
-          <th><button type="button">AST</button></th>
-          <th><button type="button">STL</button></th>
-          <th><button type="button">BLK</button></th>
-          <th><button type="button">TOV</button></th>
-          <th><button type="button">PF</button></th>
+          <th><button type="button">Season</button></th><th><button type="button">Team</button></th>
+          <th><button type="button">GP</button></th><th><button type="button">GS</button></th>
+          <th><button type="button">MP</button></th><th><button type="button">FG</button></th>
+          <th><button type="button">FGA</button></th><th><button type="button">FG%</button></th>
+          <th><button type="button">2P</button></th><th><button type="button">2PA</button></th>
+          <th><button type="button">2P%</button></th><th><button type="button">3P</button></th>
+          <th><button type="button">3PA</button></th><th><button type="button">3P%</button></th>
+          <th><button type="button">FT</button></th><th><button type="button">FTA</button></th>
+          <th><button type="button">FT%</button></th><th><button type="button">eFG%</button></th>
+          <th><button type="button">TRB</button></th><th><button type="button">AST</button></th>
+          <th><button type="button">STL</button></th><th><button type="button">BLK</button></th>
+          <th><button type="button">TOV</button></th><th><button type="button">PF</button></th>
           <th><button type="button">PTS</button></th>
         </tr>
       </thead>
       <tbody>
-        <tr><td>G.Soares</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-        <tr><td>A.Silva</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-        <tr><td>M.Carvalho</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-        <tr><td>A.Vaz</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-        <tr><td>M.Saad</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-        <tr><td>R.Tavares</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-        <tr><td>G.Pereira</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-        <tr><td>P.Inácio</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-        <tr><td>G.Gomes</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-        <tr><td>S.Faria</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-        <tr><td>M.Dias</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-        <tr><td>M.Heitor</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-        <tr><td>S.Nunes</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-        <tr><td>A.Garcia</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+        <tr><td>2021-22</td><td><a href="obc.html">OBC</a></td><td>1</td><td>1</td><td>31.2</td><td>5.0</td><td>11.0</td><td>45.5%</td><td>5.0</td><td>11.0</td><td>45.5%</td><td>0.0</td><td>0.0</td><td>00.0%</td><td>4.0</td><td>6.0</td><td>66.7%</td><td>45.5%</td><td>8.0</td><td>2.0</td><td>1.0</td><td>1.0</td><td>1.0</td><td>3.0</td><td>14.0</td></tr>
+        <tr><td>2022-23</td><td>OBC</td><td>2</td><td>2</td><td>32.5</td><td>4.5</td><td>9.5</td><td>47.4%</td><td>4.0</td><td>7.0</td><td>57.1%</td><td>0.5</td><td>2.5</td><td>20.0%</td><td>3.0</td><td>4.0</td><td>75.0%</td><td>50.0%</td><td>8.5</td><td>3.0</td><td>0.5</td><td>1.5</td><td>3.0</td><td>2.5</td><td>12.5</td></tr>
+        <tr><td>2023-24 🏆</td><td>OBC</td><td><strong>3</strong></td><td><strong>3</strong></td><td>34.1</td><td>4.7</td><td>10.0</td><td>46.7%</td><td>3.0</td><td>5.7</td><td>52.6%</td><td>1.7</td><td>4.3</td><td>38.5%</td><td>2.7</td><td>3.3</td><td>80.0%</td><td>55.0%</td><td>5.7</td><td>5.0</td><td>1.3</td><td>0.7</td><td>2.3</td><td>1.7</td><td>13.7</td></tr>
+        <tr><td>2024-25 🏆</td><td>DOL</td><td><strong>3</strong></td><td><strong>3</strong></td><td>36.8</td><td><strong>6.3</strong></td><td>13.0</td><td>48.7%</td><td><strong>5.0</strong></td><td>9.3</td><td>53.8%</td><td>1.3</td><td>3.7</td><td>36.4%</td><td>4.3</td><td>5.7</td><td>76.5%</td><td>53.8%</td><td>6.7</td><td>3.7</td><td>2.3</td><td>1.3</td><td>2.3</td><td>2.3</td><td><strong>18.3</strong></td></tr>
+        <tr><td>2025-26</td><td>PAN</td><td>1</td><td>1</td><td>33.8</td><td>5.0</td><td>12.0</td><td>41.7%</td><td>3.0</td><td>7.0</td><td>42.9%</td><td>2.0</td><td>5.0</td><td>40.0%</td><td>3.0</td><td>4.0</td><td>75.0%</td><td>50.0%</td><td>4.0</td><td>3.0</td><td>1.0</td><td>1.0</td><td>3.0</td><td>2.0</td><td>15.0</td></tr>
       </tbody>
+      <tfoot>
+        <tr><td>Playoff Average</td><td>5 yrs</td><td>10</td><td>10</td><td>34.2</td><td>5.2</td><td>11.1</td><td>46.9%</td><td>4.0</td><td>7.7</td><td>52.0%</td><td>1.2</td><td>3.4</td><td>35.3%</td><td>3.4</td><td>4.5</td><td>75.6%</td><td>51.1%</td><td>6.6</td><td>3.7</td><td>1.4</td><td>1.1</td><td>2.4</td><td>2.2</td><td>15.0</td></tr>
     </table>
   </div>
-</div>
+  <p class="note">Enter your playoff per-game averages and percentages in the blank cells. The seasons and teams are already listed for convenience.</p>
+
 
 <h4>Regular Season Totals</h4>
 <div class="stat-tabs" role="tablist" aria-label="Totals statistics type">
