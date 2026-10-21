@@ -460,10 +460,75 @@ footer{background:#263f5b;color:white;text-align:center;padding:20px;margin-top:
   <section id="gamelogs">
     <h3>Game Logs</h3>
     <p>Choose a season to view individual game performances.</p>
-    <div class="section-links">
-      <a href="gamelogs.html#season-1">Season 1 Game Logs</a>
-      <a href="gamelogs.html#season-2">Season 2 Game Logs</a>
-    </div>
+<style>
+.standings-table {
+    border-collapse: collapse;
+    border: 2px solid #888;
+    font-family: Arial, sans-serif;
+    font-size: 17px;
+    color: #222;
+    width: auto;
+    display: inline-table;
+}
+
+.standings-table th {
+    background: #eee;
+    color: #a00000;
+    font-weight: bold;
+    padding: 6px 7px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+.standings-table td {
+    padding: 6px 7px;
+    text-align: center;
+    border-bottom: 1px dotted #ccc;
+    white-space: nowrap;
+}
+
+.standings-table .team {
+    text-align: left;
+    color: #91458f;
+}
+
+.standings-table .icon {
+    color: blue;
+    text-decoration: underline;
+    padding: 6px 5px;
+}
+
+.standings-table .record {
+    border-left: 1px dotted #ccc;
+}
+</style>
+<table class="standings-table">
+    <thead>
+        <tr>
+            <th>East</th>
+            <th>Pts</th>
+            <th>W</th>
+            <th>L</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td class="team">Benfica (1)</td><td class="icon">49</td><td class="record">23</td><td class="record">3</td></tr>
+        <tr><td class="team">Estoril (2)</td><td class="icon">46</td><td class="record">20</td><td class="record">6</td></tr>
+        <tr><td class="team">Sporting (3)</td><td class="icon">44</td><td class="record">18</td><td class="record">8</td></tr>
+        <tr><td class="team">Belenenses (4)</td><td class="icon">44</td><td class="record">18</td><td class="record">8</td></tr>
+        <tr><td class="team">Odivelas (5)</td><td class="icon">41</td><td class="record">15</td><td class="record">11</td></tr>
+        <tr><td class="team">Física (6)</td><td class="icon">41</td><td class="record">15</td><td class="record">11</td></tr>
+        <tr><td class="team">SIMECQ (7)</td><td class="icon">41</td><td class="record">15</td><td class="record">11</td></tr>
+        <tr><td class="team">Alenquer (8)</td><td class="icon">39</td><td class="record">13</td><td class="record">13</td></tr>
+        <tr><td class="team">Queluz (9)</td><td class="icon">37</td><td class="record">11</td><td class="record">15</td></tr>
+        <tr><td class="team">Lobos (10)</td><td class="icon">35</td><td class="record">9</td><td class="record">17</td></tr>
+        <tr><td class="team">Loures (11)</td><td class="icon">35</td><td class="record">9</td><td class="record">17</td></tr>
+        <tr><td class="team">Carnide (12)</td><td class="icon">34</td><td class="record">8</td><td class="record">18</td></tr>
+        <tr><td class="team">Linces (13)</td><td class="icon">31</td><td class="record">5</td><td class="record">21</td></tr>
+        <tr><td class="team">Maria Pia (14)</td><td class="icon">31</td><td class="record">3</td><td class="record">23</td></tr>
+    </tbody>
+</table>
+  </section>
   </section>
 
   <section id="records">
