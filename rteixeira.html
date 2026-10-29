@@ -68,54 +68,54 @@ p{line-height:1.5}
 .stat span{color:#555}
 
 .table-wrap{overflow-x:auto;margin:8px 0 13px}
+table{border-collapse:collapse;width:100%;font-size:12px;white-space:nowrap}
 
-table{
-  border-collapse:collapse;
-  width:100%;
-  font-size:12px;
-  white-space:nowrap;
-}
-
+/* Table headers */
 th{
   background:#e8edf2;
   border-top:1px solid #aebac6;
   border-bottom:1px solid #aebac6;
-  border-right:1px solid #dce2e8;
   padding:0;
   text-align:right;
+  position:relative;
 }
 
-th button{
-  font:inherit;
-  font-weight:bold;
-  color:#222;
-  background:transparent;
-  border:0;
-  padding:8px 7px;
-  width:100%;
-  cursor:pointer;
-  white-space:nowrap;
+/* Short, subtle vertical separators between header cells */
+th:not(:last-child)::after{
+  content:"";
+  position:absolute;
+  right:0;
+  top:35%;
+  height:30%;
+  border-right:1px solid #dce2e8;
+  pointer-events:none;
 }
 
+th button{font:inherit;font-weight:bold;color:#222;background:transparent;border:0;padding:8px 7px;width:100%;cursor:pointer;white-space:nowrap}
 th button:hover{background:#d5e0eb}
 th button:focus-visible{outline:2px solid #174f82;outline-offset:-2px}
 th:first-child{text-align:left}
 
+/* Table cells */
 td{
   border-bottom:1px solid #d8dfe6;
-  border-right:1px solid #e3e7eb;
   padding:8px 7px;
   text-align:right;
+  position:relative;
+}
+
+/* Short, subtle vertical separators between stat cells */
+td:not(:last-child)::after{
+  content:"";
+  position:absolute;
+  right:0;
+  top:35%;
+  height:30%;
+  border-right:1px solid #e3e7eb;
+  pointer-events:none;
 }
 
 td:first-child{text-align:left}
-
-/* Keep the table's right edge clean */
-th:last-child,
-td:last-child{
-  border-right:none;
-}
-
 tbody tr:nth-child(even){background:#f4f6f8}
 tbody tr:hover{background:#edf3f8}
 tfoot{font-weight:bold;background:#e8edf2}
@@ -178,13 +178,11 @@ footer{background:#263f5b;color:white;text-align:center;padding:20px;margin-top:
   header h1{font-size:22px}
   nav{gap:12px}
 }
-
 @media(max-width:400px){
   .awards{grid-template-columns:1fr}
   .stat-tab{padding:9px 13px}
 }
 </style>
-
 </head>
 
 <body>
@@ -244,25 +242,25 @@ footer{background:#263f5b;color:white;text-align:center;padding:20px;margin-top:
         </div>
       </div>
     </div>
-  </section>
 
-  <section id="awards">
-    <h3>Awards & Achievements</h3>
-    <div class="awards">
-      <div class="award"><strong>1x Champion</strong><span>2023-24</span></div>
-      <div class="award"><strong>1x Finals MVP</strong><span>2023-24</span></div>
-      <div class="award"><strong>4x All-Star</strong><span>2021-22, 2022-23, 2023-24, 2025-26</span></div>
-      <div class="award"><strong>Scoring Leader</strong><span>2022-23</span></div>
+    <section id="awards">
+      <h3>Awards & Achievements</h3>
+      <div class="awards">
+        <div class="award"><strong>1x Champion</strong><span>2023-24</span></div>
+        <div class="award"><strong>1x Finals MVP</strong><span>2023-24</span></div>
+        <div class="award"><strong>4x All-Star</strong><span>2021-22, 2022-23, 2023-24, 2025-26</span></div>
+        <div class="award"><strong>Scoring Leader</strong><span>2022-23</span></div>
+      </div>
+    </section>
+
+    <h3>Career Averages</h3>
+    <div class="summary">
+      <div class="stat"><strong>15.1</strong><span>Points per game</span></div>
+      <div class="stat"><strong>4.5</strong><span>Rebounds per game</span></div>
+      <div class="stat"><strong>2.1</strong><span>Assists per game</span></div>
+      <div class="stat"><strong>130</strong><span>Games played</span></div>
     </div>
   </section>
-
-  <h3>Career Averages</h3>
-  <div class="summary">
-    <div class="stat"><strong>15.1</strong><span>Points per game</span></div>
-    <div class="stat"><strong>4.5</strong><span>Rebounds per game</span></div>
-    <div class="stat"><strong>2.1</strong><span>Assists per game</span></div>
-    <div class="stat"><strong>130</strong><span>Games played</span></div>
-  </div>
 
   <section id="statistics">
     <h3>Season Statistics</h3>
@@ -430,7 +428,6 @@ footer{background:#263f5b;color:white;text-align:center;padding:20px;margin-top:
         </table>
       </div>
     </div>
-
   </section>
 
   <section id="teams">
@@ -453,6 +450,7 @@ footer{background:#263f5b;color:white;text-align:center;padding:20px;margin-top:
     <h3>Photos & Highlights</h3>
     <p>Add links to your game highlights, photos and videos here.</p>
   </section>
+
 </main>
 
 <footer>
